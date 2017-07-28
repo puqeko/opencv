@@ -66,7 +66,7 @@ Playing Video from file
 -----------------------
 
 It is same as capturing from Camera, just change camera index with video file name. Also while
-displaying the frame, use appropriate time for cv2.waitKey(). If it is too less, video will be very
+displaying the frame, use appropriate time for `cv2.waitKey()`. If it is too less, video will be very
 fast and if it is too high, video will be slow (Well, that is how you can display videos in slow
 motion). 25 milliseconds will be OK in normal cases.
 @code{.py}
@@ -95,7 +95,7 @@ Saving a Video
 --------------
 
 So we capture a video, process it frame-by-frame and we want to save that video. For images, it is
-very simple, just use cv2.imwrite(). Here a little more work is required.
+very simple, just use `cv2.imwrite()`. Here a little more work is required.
 
 This time we create a **VideoWriter** object. We should specify the output file name (eg:
 output.avi). Then we should specify the **FourCC** code (details in next paragraph). Then number of
@@ -109,10 +109,10 @@ platform dependent. Following codecs works fine for me.
 -   In Fedora: DIVX, XVID, MJPG, X264, WMV1, WMV2. (XVID is more preferable. MJPG results in high
     size video. X264 gives very small size video)
 -   In Windows: DIVX (More to be tested and added)
--   In OSX : *(I don't have access to OSX. Can some one fill this?)*
+-   In OSX: MJPG (.mpg), DIVX (.avi), X264 (.mkv)
 
-FourCC code is passed as cv2.VideoWriter_fourcc('M','J','P','G') or
-cv2.VideoWriter_fourcc(\*'MJPG') for MJPG.
+FourCC code is passed as `cv2.VideoWriter_fourcc('M','J','P','G')` or
+`cv2.VideoWriter_fourcc(\*'MJPG')` for MJPG.
 
 Below code capture from a Camera, flip every frame in vertical direction and saves it.
 @code{.py}
